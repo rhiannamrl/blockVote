@@ -1,5 +1,7 @@
-var SimpleStorage = artifacts.require("./SimpleStorage.sol");
+var SimpleStorage = artifacts.require('./SimpleStorage.sol')
+const HogwartsElection = artifacts.require('./HogwartsElection.sol')
 
 module.exports = function(deployer) {
-  deployer.deploy(SimpleStorage);
-};
+  deployer.deploy(HogwartsElection)
+  deployer.deploy(SimpleStorage)
+}
