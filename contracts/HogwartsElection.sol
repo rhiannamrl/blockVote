@@ -11,6 +11,7 @@ contract HogwartsElection {
         uint voteCount;
     }
 
+    //the maps act as a hash table!!!
     mapping(address => bool) public voters;
 
     //create multiple candidates
