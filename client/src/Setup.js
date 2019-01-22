@@ -56,5 +56,3 @@ web3.eth.defaultAccount = web3.eth.accounts[0]
 let votingContract = new web3.eth.Contract(votingABI, votingAddress)
 
 export { votingContract }
-
-// const ratingContract = web3.eth.contract(ratingABI).at(ratingAddress)

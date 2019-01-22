@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import HogwartsElection from './contracts/HogwartsElection.json'
 // import getWeb3 from './utils/getWeb3'
-import Candidates from './Candidates'
+import { Candidates } from './Candidates'
 import { votingContract } from './Setup'
 import './App.css'
 
@@ -20,7 +20,6 @@ export default class App extends Component {
 
   castVote(candidate) {
     votingContract.methods.voteForCandidate(candidate)
-    console.log(votingContract.methods.voteForCandidate(candidate))
     let totalVotes = votingContract.methods.totalVotesFor(candidate)
     this.setState({
       candidates: this.state.candidates.map(el =>
@@ -38,14 +37,13 @@ export default class App extends Component {
     console.log('votingContract', votingContract)
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Hogwarts Class Election</h1>
-        </header>
-        <p className="App-intro">Vote For The Brightest Young Wizard!</p>
+        <div className="App-header">
+          <h1>Hogwarts School of Witchcraft and Wizardry</h1>
+        </div>
+        <h2 className="App-intro">Class Election</h2>
         <div className="movie-table">
           <Candidates candidates={this.state.candidates} vote={this.castVote} />
         </div>
-        <form />
       </div>
     )
   }
